@@ -1,0 +1,348 @@
+body {
+  margin: 0;
+  background-color: #f1f1f1; 
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 50px;
+}
+
+.content-wrapper {
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 20px;
+    padding-top: 50px; 
+}
+
+h1 {
+  text-align: center;
+  color: #3e1d5f;
+  font-size: 100px; 
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 5px;
+  position: relative; 
+  overflow: hidden; 
+ 
+  height: 150px; 
+  line-height: 1.5; 
+}
+
+.sliding-title {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+}
+
+
+h2.sliding-title { height: 80px;  line-height: 80px;  margin-top: 60px; border-bottom: 2px solid #301848; }
+h3.sliding-title { height: 60px;  line-height: 60px;  margin-top: 30px; }
+
+.sliding-title span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+    display: block;
+}
+
+.default-text {
+    top: 0;
+}
+
+.hover-text {
+    top: 100%; 
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    color: #301848;
+}
+
+
+.sliding-title:hover .default-text {
+    transform: translateY(-100%);
+}
+
+.sliding-title:hover .hover-text {
+    transform: translateY(-100%);
+}
+h1 .script-text, h1 .hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s ease-out;
+    color: #3e1d5f; 
+    font-family: 'Noto Sans Devanagari', sans-serif; 
+}
+
+h1 .hover-text {
+    transform: translate(-50%, calc(100% - 50%)); 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #301848;
+}
+
+h1:hover .script-text {
+    transform: translate(-50%, calc(-100% - 50%)); 
+}
+
+h1:hover .hover-text {
+    transform: translate(-50%, -50%); 
+}
+
+.tagline {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 50px;
+}
+
+h2.sliding-title { height: 80px; line-height: 80px; margin-top: 60px; border-bottom: 2px solid #301848; }
+h3.sliding-title { height: 60px; line-height: 60px; margin-top: 30px; }
+
+h2 {
+  text-align: center;
+  color: #301848;
+  font-size: 2.5rem;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #301848;
+  padding-bottom: 5px;
+}
+
+h3 {
+    text-align:center;
+    color: #3e1d5f; 
+    margin-top: 30px;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+p {
+    text-align: center; 
+    line-height: 1.6; 
+    max-width: 800px; 
+    margin: 10px auto; 
+    font-size: 1.1rem;
+}
+
+#cardanagari, #cardhistory {
+  margin-right: 10px;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+
+#navbar {
+  background-color: #301848;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: block;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+.grid12 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); 
+    gap: 5px;
+    margin-bottom: 40px; 
+}
+
+.grid12 div {
+  background-color: #f1f1f1;
+  border: 1px solid #ccc; 
+  padding: 10px 5px; 
+  font-size: 40px; 
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out; 
+}
+
+
+.vowels div {
+    background-color: #e0f7fa;
+    color: #000000;
+}
+.consonants div {
+    background-color: #e0f7fa;
+    color: #000000;
+   
+    grid-template-columns: repeat(10, 1fr); 
+}
+.numerals div {
+    background-color: #e0f7fa;
+    color: #000000;
+    grid-template-columns: repeat(10, 1fr); 
+}
+
+
+.grid12 div:hover {
+  background-color: #301848;
+  color: white; 
+  transform: scale(1.1); 
+  z-index: 10; 
+  border-color: #301848;
+}
+
+
+
+.pronunciation-text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 8px 15px;
+  border-radius: 8px;
+  white-space: nowrap;
+  z-index: 100;
+  font-size: 16px;
+  transition: opacity 0.3s, visibility 0.3s; 
+}
+
+
+.pronunciation-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 7px; 
+  border-style: solid;
+  border-color: #f4e9ff transparent transparent transparent;
+}
+.grid12 div:hover .pronunciation-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  gap: 30px; 
+}
+.card {
+  width: 350px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s;
+  background-color: white;
+}
+.card:hover {
+    transform: translateY(-5px); 
+}
+.card-content {
+  padding:16px;
+}
+.card-content h3{
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 8px;
+  text-align: left;
+}
+.card-content p{
+  font-size: 1rem;
+  color: #474646;
+  line-height:1.4;
+  text-align: left;
+  max-width: none;
+}
+.card-content a.btn {
+    display: inline-block;
+    background-color: #301848;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+.card-content a.btn:hover {
+    background-color: #3e1d5f;
+}
+
+.textbox {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.large {
+    display: inline-block;
+    text-decoration: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.large :hover {
+    transform: translateY(100px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    background-color: #ddd;
+    color: #301848;
+}
+
+.sliding-button {
+    position: relative;
+    overflow: hidden; 
+    display: inline-block;
+    background-color: #301848;
+    color: white;
+    min-width: 180px;
+    height: 60px;     
+    line-height: 60px; 
+    padding: 0 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-default-text, 
+.btn-hover-text {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transition: transform 0.4s;
+    display: block;
+    text-align: center;
+}
+.btn-default-text {
+    top: 0;
+}
+.btn-hover-text {
+    top: 100%; 
+    font-family: 'Noto Sans Devanagari', sans-serif;
+}
+.sliding-button:hover .btn-default-text {
+    transform: translateY(-100%);
+}
+.sliding-button:hover .btn-hover-text {
+    transform: translateY(-100%);
+}
+.sliding-button:hover {
+    background-color: #4a2370;
+}
+
+
